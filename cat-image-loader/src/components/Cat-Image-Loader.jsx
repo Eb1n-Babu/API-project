@@ -11,8 +11,24 @@ function CatImageLoader(props) {
     }
     return (
         <div>
-            <button onClick={fetchCat}>Show Me a Cat 🐱</button><br/>
-            {catUrl && <img src={catUrl}  alt="Random Cat" width="400" height="400"/>}
+            <button onClick={fetchCatImage}>Show Me a Cat 🐱</button><br/>
+            {loading && (
+                <div style={{
+                    position: 'fixed',
+                    top: 0,
+                    left: 0,
+                    width: '100vw',
+                    height: '100vh',
+                    display: 'flex',
+                    justifyContent: 'center',
+                    alignItems: 'center',
+                    pointerEvents: 'none',
+                    backgroundColor: 'rgba(255, 255, 255, 0.8)',
+                    zIndex: 9999
+                }}>
+                    <img src={loading} alt="Loading..." width="400" height="400" />
+                </div>
+            )}
         </div>
     );
 }
