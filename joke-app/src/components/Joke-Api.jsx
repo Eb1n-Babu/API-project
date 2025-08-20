@@ -11,7 +11,7 @@ function JokeApi(props) {
     }
 
     return (
-        <div>
+        <div style={{ height: '800px', width: '1500px' }}>
             <button onClick={fetchJoke}>button</button>
             <h1>{joke}</h1>
         </div>
